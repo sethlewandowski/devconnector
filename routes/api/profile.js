@@ -44,6 +44,47 @@ router.post(
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
+
+    const {
+      company,
+      website,
+      location,
+      bio,
+      status,
+      githubusername,
+      skills,
+      youtube,
+      facebook,
+      twitter,
+      instagram,
+      linkedin,
+    } = req.body;
+
+    // Build Profile Object
+    const profileFields = {};
+    profileFields.user = req.user.id;
+    if (company) profileFields.company = company;
+    if (website) profileFields.company = website;
+    if (location) profileFields.company = location;
+    if (bio) profileFields.company = bio;
+    if (status) profileFields.company = status;
+    if (githubusername) profileFields.company = githubusername;
+    // skills needs to be split by comma then all whitespace trimmed to add create an array of skills
+    if (skills) {
+      profileFields.skills = skills.split(",").map((skill) => skill.trim());
+    }
+
+    // build social object
+    profileFields.social = {};
+    if (youtube) profileFields.social.youtube = youtube;
+    if (twitter) profileFields.social.youtube = twitter;
+    if (facebook) profileFields.social.youtube = facebook;
+    if (linkedin) profileFields.social.youtube = linkedin;
+    if (instagram) profileFields.social.youtube = instagram;
+
+    console.log(profileFields.social.twitter);
+
+    res.send("Hello it worked!");
   }
 );
 

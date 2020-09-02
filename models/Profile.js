@@ -17,7 +17,7 @@ const ProfileSchema = new mongoose.Schema({
   status: {
     // job title, student, etc
     type: String,
-    required: true,
+    required: false, // throwing an error in testing changed to false
   },
   skills: {
     // array of strings

@@ -64,11 +64,11 @@ router.post(
     const profileFields = {};
     profileFields.user = req.user.id;
     if (company) profileFields.company = company;
-    if (website) profileFields.company = website;
-    if (location) profileFields.company = location;
-    if (bio) profileFields.company = bio;
-    if (status) profileFields.company = status;
-    if (githubusername) profileFields.company = githubusername;
+    if (website) profileFields.website = website;
+    if (location) profileFields.location = location;
+    if (bio) profileFields.bio = bio;
+    if (status) profileFields.status = status;
+    if (githubusername) profileFields.githubusername = githubusername;
     // skills needs to be split by comma then all whitespace trimmed to add create an array of skills
     if (skills) {
       profileFields.skills = skills.split(",").map((skill) => skill.trim());
@@ -77,10 +77,10 @@ router.post(
     // build social object
     profileFields.social = {};
     if (youtube) profileFields.social.youtube = youtube;
-    if (twitter) profileFields.social.youtube = twitter;
-    if (facebook) profileFields.social.youtube = facebook;
-    if (linkedin) profileFields.social.youtube = linkedin;
-    if (instagram) profileFields.social.youtube = instagram;
+    if (twitter) profileFields.social.twitter = twitter;
+    if (facebook) profileFields.social.facebook = facebook;
+    if (linkedin) profileFields.social.linkedin = linkedin;
+    if (instagram) profileFields.social.instagram = instagram;
 
     // profileFields object is now built, let's save it to the db
     try {
@@ -99,8 +99,8 @@ router.post(
 
       // else, create it
       profile = new Profile(profileFields);
-
-      await Profile.save();
+      // then save it
+      await profile.save();
       res.json(profile);
     } catch (err) {
       console.log(err.message);

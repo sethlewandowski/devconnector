@@ -82,9 +82,30 @@ router.post(
     if (linkedin) profileFields.social.youtube = linkedin;
     if (instagram) profileFields.social.youtube = instagram;
 
-    console.log(profileFields.social.twitter);
+    // profileFields object is now built, let's save it to the db
+    try {
+      let profile = await Profile.findOne({ user: req.user.id });
 
-    res.send("Hello it worked!");
+      if (profile) {
+        // if exists, update it
+        profile = await Profile.findOneAndUpdate(
+          { user: req.user.id },
+          { $set: profileFields },
+          { new: true }
+        );
+
+        return res.json(profile);
+      }
+
+      // else, create it
+      profile = new Profile(profileFields);
+
+      await Profile.save();
+      res.json(profile);
+    } catch (err) {
+      console.log(err.message);
+      res.status(500).send("Server Error");
+    }
   }
 );
 

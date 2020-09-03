@@ -287,7 +287,7 @@ router.put(
     try {
       const profile = await Profile.findOne({ user: req.user.id });
 
-      profile.experience.unshift(newEdu);
+      profile.education.unshift(newEdu);
 
       await profile.save();
 

@@ -34,18 +34,18 @@ const ProfileSchema = new mongoose.Schema({
     {
       title: {
         type: String,
-        required: true,
+        required: false,
       },
       company: {
         type: String,
-        required: true,
+        required: false,
       },
       location: {
         type: String,
       },
       from: {
         type: Date,
-        required: true,
+        required: false,
       },
       to: {
         type: Date,

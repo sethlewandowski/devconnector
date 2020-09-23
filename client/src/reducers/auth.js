@@ -26,7 +26,7 @@ export default function (state = initalState, action) {
         user: payload,
       };
     case REGISTER_SUCCESS:
-    case LOGIN_SUCCESS:
+    case LOGIN_SUCCESS: //does same thing as register_success
       localStorage.setItem('token', payload.token);
       return {
         ...state,

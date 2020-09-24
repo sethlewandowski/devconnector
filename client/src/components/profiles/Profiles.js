@@ -8,7 +8,7 @@ import { getProfiles } from '../../actions/profile';
 const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
   useEffect(() => {
     getProfiles();
-  }, []); // empty brackets makes it only run once
+  }, [getProfiles]); // empty brackets makes it only run once
   return (
     <Fragment>
       {loading ? (

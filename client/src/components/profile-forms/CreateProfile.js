@@ -56,18 +56,19 @@ const CreateProfile = ({ createProfile, history }) => {
       <form className='form' onSubmit={(e) => onSubmit(e)}>
         <div className='form-group'>
           <select name='status' value={status} onChange={(e) => onChange(e)}>
-            <option value='0'>* Select Professional Status</option>
-            <option value='Developer'>Developer</option>
-            <option value='Junior Developer'>Junior Developer</option>
-            <option value='Senior Developer'>Senior Developer</option>
-            <option value='Manager'>Manager</option>
-            <option value='Student or Learning'>Student or Learning</option>
-            <option value='Instructor'>Instructor or Teacher</option>
-            <option value='Intern'>Intern</option>
+            <option value='0'>* Select Entrepreneurial Status</option>
+            <option value='Employed Full-Time'>Employed Full-Time</option>
+            <option value='Employed Part-Time'>Employed Part-Time</option>
+            <option value='Working On a New Idea'>Working On a New Idea</option>
+            <option value='Looking to Join a Team'>
+              Looking to Join a Team
+            </option>
+            <option value='Looking for Partners'>Looking for Partners</option>
+            <option value='Looking for Funding'>Looking for Funding</option>
             <option value='Other'>Other</option>
           </select>
           <small className='form-text'>
-            Give us an idea of where you are at in your career
+            Give us an idea of where you are in your entrepreneurial career
           </small>
         </div>
         <div className='form-group'>
@@ -128,8 +129,8 @@ const CreateProfile = ({ createProfile, history }) => {
             onChange={(e) => onChange(e)}
           />
           <small className='form-text'>
-            If you want your latest repos and a Github link, include your
-            username
+            For developers who want their latest repos and a Github link,
+            include your username
           </small>
         </div>
         <div className='form-group'>
@@ -212,7 +213,7 @@ const CreateProfile = ({ createProfile, history }) => {
           </Fragment>
         )}
 
-        <input type='submit' className='btn btn-primary my-1' />
+        <input type='submit' className='btn btn-primary my-1' value='Submit' />
         <Link className='btn btn-light my-1' to='/dashboard'>
           Go Back
         </Link>

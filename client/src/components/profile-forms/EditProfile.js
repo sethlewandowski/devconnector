@@ -81,14 +81,15 @@ const EditProfile = ({
       <form className='form' onSubmit={(e) => onSubmit(e)}>
         <div className='form-group'>
           <select name='status' value={status} onChange={(e) => onChange(e)}>
-            <option value='0'>* Select Professional Status</option>
-            <option value='Developer'>Developer</option>
-            <option value='Junior Developer'>Junior Developer</option>
-            <option value='Senior Developer'>Senior Developer</option>
-            <option value='Manager'>Manager</option>
-            <option value='Student or Learning'>Student or Learning</option>
-            <option value='Instructor'>Instructor or Teacher</option>
-            <option value='Intern'>Intern</option>
+            <option value='0'>* Select Entrepreneurial Status</option>
+            <option value='Employed Full-Time'>Employed Full-Time</option>
+            <option value='Employed Part-Time'>Employed Part-Time</option>
+            <option value='Working On a New Idea'>Working On a New Idea</option>
+            <option value='Looking to Join a Team'>
+              Looking to Join a Team
+            </option>
+            <option value='Looking for Partners'>Looking for Partners</option>
+            <option value='Looking for Funding'>Looking for Funding</option>
             <option value='Other'>Other</option>
           </select>
           <small className='form-text'>

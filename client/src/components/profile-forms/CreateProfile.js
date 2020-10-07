@@ -115,7 +115,8 @@ const CreateProfile = ({ createProfile, history }) => {
             onChange={(e) => onChange(e)}
           />
           <small className='form-text'>
-            Please use comma separated values (eg. HTML,CSS,JavaScript,PHP)
+            Please use comma separated values (eg. Marketing, Javascript,
+            Product Development)
           </small>
         </div>
         <div className='form-group'>

@@ -1,6 +1,6 @@
 {
-  "mongoURI": "mongodb+srv://sethl:sethl@devconnector.t4us8.mongodb.net/<dbname>?retryWrites=true&w=majority",
+  "mongoURI": "mongodb+srv://seth:5uIXNWTrOQ7lCkAb@devconnector.t4us8.mongodb.net/<dbname>?retryWrites=true&w=majority",
   "jwtSecret": "mysecrettoken",
   "githubClientId": "d4219e5449425b9e00fb",
-  "githubSecret": "8b2e697dd6053fe0d9ec52bf19fea25168496581"
+  "githubToken": "8b2e697dd6053fe0d9ec52bf19fea25168496581"
 }

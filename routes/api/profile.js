@@ -4,6 +4,7 @@ const config = require('config');
 const router = express.Router();
 const auth = require('../../middleware/auth');
 const { check, validationResult } = require('express-validator/check');
+const axios = require('axios');
 
 const Profile = require('../../models/Profile');
 const User = require('../../models/User');
@@ -335,15 +336,15 @@ router.delete('/education/:edu_id', auth, async (req, res) => {
 // @access        Public
 router.get('/github/:username', async (req, res) => {
   try {
-    const options = {
-      uri: `https://api.github.com/users/${
-        req.params.username
-      }/repos?per_page=5&sort=created: asc&client_id=${config.get(
-        'githubClientId'
-      )}&client_secret=${config.get('githubSecret')}`,
-      method: 'GET',
-      headers: { 'user-agent': 'node.js' },
+    const uri = encodeURI(
+      `https://api.github.com/users/${req.params.username}/repos?per_page=5&sort=created:asc`
+    );
+    const headers = {
+      'user-agent': 'node.js',
+      Authorization: `token ${config.get('githubToken')}`,
     };
+
+    const gitHubResponse = await axios.get(uri, { headers });
 
     request(options, (error, response, body) => {
       if (error) console.error(error);

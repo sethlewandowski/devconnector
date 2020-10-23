@@ -1,10 +1,12 @@
 /* Global Styles */
 :root {
-  --primary-color: #17a2b8;
-  --dark-color: #343a40;
+  --primary-color: #ffb2b2;
+  --dark-color: #4b4b4b;
   --light-color: #f4f4f4;
   --danger-color: #dc3545;
   --success-color: #28a745;
+  --sand-color: #e6b8b8;
+  --blue-color: #b8cfe6;
 }
 
 * {
@@ -133,6 +135,7 @@ img {
   padding: 0.4rem 1.3rem;
   font-size: 1rem;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
   margin-right: 0.5rem;
   transition: opacity 0.2s ease-in;
@@ -256,6 +259,7 @@ img {
   padding: 0.4rem;
   font-size: 1.2rem;
   border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 .form input[type='submit'],
@@ -378,6 +382,7 @@ button {
   align-items: center;
   justify-content: center;
   text-align: center;
+  border-radius: 5px;
 }
 
 .profile-top img {
@@ -396,6 +401,7 @@ button {
 .profile-about {
   grid-area: about;
   text-align: center;
+  border-radius: 5px;
 }
 
 .profile-about .skills {
@@ -407,10 +413,12 @@ button {
 
 .profile-exp {
   grid-area: exp;
+  border-radius: 5px;
 }
 
 .profile-edu {
   grid-area: edu;
+  border-radius: 5px;
 }
 
 .profile-exp h2,
@@ -441,6 +449,7 @@ button {
 
 .profile-github .repo {
   display: flex;
+  border-radius: 5px;
 }
 
 .profile-github .repo > div:first-child {
@@ -534,6 +543,7 @@ button {
   .profile {
     grid-template-columns: 1fr;
     text-align: center;
+    border-radius: 5px;
   }
 
   .profile ul {
